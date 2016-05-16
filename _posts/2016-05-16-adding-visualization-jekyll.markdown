@@ -31,11 +31,11 @@ Now the next problem is how do we add our visualization in the layout. Luckily f
 <div id='chart'></div>
 ```
 
-To see if it is working see example below.
+## Update!
 
+This method __does not work on github pages__. External link to any javascript file will not work. In this case all javascript file was encoded in the markdown file.
 
-[embed-d3]: http://zeptonaut.com/coffeescript/d3/jekyll/2014/10/16/embedding-d3-in-jekyll.html
-
+# Example - Philippine Election Transmission of Votes
 <div id="element"></div>
 {% include blog-footer.html %}
 <script>
@@ -45,7 +45,7 @@ To see if it is working see example below.
 	element.prepend('<div>Slide to adjust</div><div id="chart2"></div>')
 	element.append('<div id="chart"></div>')
 	var width = element.width(),
-	    height = 500;
+	    height = width / 1.5;
 	var rateById = d3.map();
 	var quantize = d3.scale.quantize()
 	    .domain([0, .15])
@@ -151,3 +151,5 @@ To see if it is working see example below.
 	    }
 	});
 </script>
+
+[embed-d3]: http://zeptonaut.com/coffeescript/d3/jekyll/2014/10/16/embedding-d3-in-jekyll.html
