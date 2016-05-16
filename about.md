@@ -4,12 +4,19 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Purpose of this website is to showcase my capability as a Data Scientist. 
 
-You can find the source code for the Jekyll new theme at:
+1. Diverse Technologies
+2. Mathematics
+3. Business Skills
+4. Visualizations
+5. Innovation
+
+<!-- You can find the source code for the Jekyll new theme at:
 {% include icon-github.html username="jglovier" %} /
 [jekyll-new](https://github.com/jglovier/jekyll-new)
 
 You can find the source code for Jekyll at
 {% include icon-github.html username="jekyll" %} /
 [jekyll](https://github.com/jekyll/jekyll)
+ -->
