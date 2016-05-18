@@ -9,7 +9,7 @@ categories: d3 visualization jekyll
 I will be using jekyll to provide my blog. Since visualization is one the main reason why I did create a blog. It is important that the blogging technique I'll be using is capable of doing such feat. 
 
 
-I did a quick search on google and stumble upon this blog [Embedding D3.js in a Jekyll blog post][embed-d3]. There are 3 things that keeping me from creating a blog post with d3 in it.
+I did a quick search on google and stumble upon this blog [Embedding D3.js in a Jekyll blog post][embed-d3]. There are 2 things that keeping me from creating a blog post with d3 in it.
 
 1. Add javascript in jekyll.
 2. How to put the visualization in the layout.

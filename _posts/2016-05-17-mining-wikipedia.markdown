@@ -14,6 +14,7 @@ Lets start with the [data science article][data-science]. We will gather all the
 
 
 
+
 ### Notebook
 
 
@@ -26,6 +27,7 @@ import pandas as pd
 import re
 import urllib2
 import os
+from sklearn.preprocessing import LabelEncoder
 ```
 
 #### Config
@@ -124,33 +126,33 @@ pd.DataFrame(data, columns=['from', 'to', 'degree']).sample(5)
   </thead>
   <tbody>
     <tr>
-      <th>8161</th>
-      <td>/wiki/Statistical_inference</td>
-      <td>/wiki/Statistical_learning_theory</td>
+      <th>7235</th>
+      <td>/wiki/Histogram</td>
+      <td>/wiki/Computer_programming</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>6497</th>
-      <td>/wiki/Run_chart</td>
-      <td>/wiki/Statistical_learning_theory</td>
+      <th>4470</th>
+      <td>/wiki/Probability_models</td>
+      <td>/wiki/Main_Page</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>4073</th>
-      <td>/wiki/Data_engineering</td>
-      <td>/wiki/Scatterplot</td>
+      <th>3248</th>
+      <td>/wiki/Machine_translation</td>
+      <td>/wiki/Cartogram</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>2634</th>
-      <td>/wiki/Medical_informatics</td>
-      <td>/wiki/Statistical_model</td>
+      <th>1015</th>
+      <td>/wiki/Forbes</td>
+      <td>/wiki/Harvard_Business_Review</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>2674</th>
-      <td>/wiki/Medical_informatics</td>
-      <td>/wiki/Economics</td>
+      <th>1370</th>
+      <td>/wiki/Prasanta_Chandra_Mahalanobis</td>
+      <td>/wiki/Boxplot</td>
       <td>1</td>
     </tr>
   </tbody>
@@ -161,5 +163,14 @@ pd.DataFrame(data, columns=['from', 'to', 'degree']).sample(5)
 
 
 ```python
-
+# save output
+df = pd.DataFrame(data, columns=['from', 'to', 'degree'])
+le = LabelEncoder()
+le.fit(np.union1d(df['from'], df['to']))
+df['source'] = le.transform(df['from'])
+df['target'] = le.transform(df['to'])
+df.to_csv('output/data_science_links.csv', index=False)
 ```
+
+
+Download output [here](https://dl.dropboxusercontent.com/u/98529778/dataset/data_science_links.csv)
