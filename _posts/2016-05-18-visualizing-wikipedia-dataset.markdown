@@ -34,7 +34,7 @@ In this case we have no previous knowledge on what exactly the dataset looks lik
 
 To create a bar chart we need to identify what goes to our x and y axis. We need a categorical variable for the x axis while we can use continuous or discrete numeric variable for the y. With that being said we can set our x axis as the wiki article and the y axis as the frequency on how many times it was linked. For statistically inclined readers it would be a histogram.
 
-<div id='histogram'></div>
+<div id='bar-chart'></div>
 
 
 
@@ -45,8 +45,8 @@ To create a bar chart we need to identify what goes to our x and y axis. We need
 {% if page.enable_viz %}
 {% include blog-footer.html %}
 <script>    
-	// table visualization
 	d3.text("{{ page.dataset_link }}", function(data) {
+		// Visualization - table
 		var parsedCSV = d3.csv.parseRows(data);
 		window.csvText = data;
 		window.parsedCSV = parsedCSV;
@@ -62,6 +62,41 @@ To create a bar chart we need to identify what goes to our x and y axis. We need
 				.data(function(d) { return d; }).enter()
 				.append('td')
 				.text(function(d) { return d; });
+
+		// Visualization - bar chart
+		// init vars
+		var links = [];
+		// get data
+		var data = d3.csv.parse(csvText);
+		for (var i = data.length - 1; i >= 0; i--) {
+			links.push(data[i].source);
+			links.push(data[i].target);
+		}
+		// process data
+		var link_count = d3.nest()
+		   .key(function(d) { return d })
+		   .rollup(function(d) { return d.length })
+		   .sortValues(function(a, b) { return a - b; })
+		   .entries(links);
+		// start visualization
+		nv.addGraph(function() {
+			// specify chart type
+			var chart = nv.models
+				.discreteBarChart()
+				.x(function(d) { return d.key; })
+				.y(function(d) { return d.values; });
+			// specify layout
+			d3.select('#bar-chart')
+				.datum([{
+					'key': 'link_count',
+					'values': link_count.slice(0, 6)
+				}])
+				.call(chart);
+			// housekeeping
+			nv.utils.windowResize(chart.update);
+			return chart;
+		});
+
 	});
 </script>
 {% endif %}
