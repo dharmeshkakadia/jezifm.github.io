@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Extracting Facebook Data
+title: Attempt to extract Facebook Data
 ---
 
 Everyone is using facebook today, it is a good opportunity to gather data through it. Maybe we can get insights that are not visible through facebook itself.
@@ -123,7 +123,7 @@ next|The Graph API endpoint that will return the next page of data. If not inclu
 previous|The Graph API endpoint that will return the previous page of data. If not included, this is the first page of data.
 
 # Dead End
-I had to stop here. Facebook updated their [graph api][graph-api-update] to only include user that allowed them to be in the result.
+I had to stop here. Facebook updated their [graph api][graph-api-update], that changes the default permission to not allowed to be searched. Only users that updated their permission would be query-able. Of course, no normal user would go that deep to their permission settings and allow them to be mined, geez.
 
 
 [facebook-explorer]: https://developers.facebook.com/tools/explorer

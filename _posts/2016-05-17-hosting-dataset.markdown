@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Hosting datasets (incomplete)'
+title: 'Hosting datasets'
 date:   2016-05-17 17:00:01 +0800
 categories: visualization d3 data science dataset storage
 ---
@@ -36,6 +36,10 @@ Steps to create a data repository in _github_:
 
 The only take away here is that you wiill be creating one repository for every dataset, which can make your repository cluttered.
 
-Next option is dropbox, 
+Next option is dropbox, hosting in dropbox is very easy. 
 
-This post is incomplete (can't access dropbox)
+1. Create an account
+2. Upload dataset to public folder
+3. Copy Link
+
+Thats it for now. I don't see any reason yet not to use dropbox.
