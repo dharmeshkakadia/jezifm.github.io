@@ -9,4 +9,16 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+  {% for css_link in page.css_links %}
+  	<link rel="stylesheet" href="{{ css_link }}">
+  {% endfor %}
+
 </head>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+{% if page.enable_d3 %}
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+{% endif %}
+{% for js_link in page.js_links %}
+  <script src="{{ js_link }}"></script>
+{% endfor %}

@@ -5,7 +5,7 @@ title: Extracting Facebook Data
 
 Everyone is using facebook today, it is a good opportunity to gather data through it. Maybe we can get insights that are not visible through facebook itself.
 
-How are we going to do it? Facebook has an api called __Graph API___ that allows user get the data. Lets see how facebook define it.
+How are we going to do it? Facebook has an api called __Graph API__ that allows user get the data. Lets see how facebook define it.
 
 > The Graph API is the primary way to get data in and out of Facebook's social graph. It's a low-level HTTP-based API that is used to query data, post new stories, upload photos and a variety of other tasks that an app might need to do.
 
@@ -31,7 +31,7 @@ graph.get('me/posts')
 
 Now that we can use the api, we need to know what data do we exactly need. For the purpose of this example, we'll try to extract the connection between our friends. We're going to extract up to 2 degrees of connection.
 
-Getting the data seems not straight forward sql style approach. Lets go over these.
+Getting the data via the API is not an as easy task, lets understand how exactly the API works.
 
 # Graph API Basics
 
@@ -41,7 +41,7 @@ The Graph API is named after the idea of a 'social graph' - a representation of 
 * edges - the connections between those "things", such as a _Page's Photos_, or a _Photo's Comments_
 * fields - info about those "things", such as a person's birthday, or the name of a Page
 
-To query a node url is:
+To query a node:
 
 ```
 graph.facebook.com/{node-id}
@@ -53,7 +53,7 @@ for edge:
 graph.facebook.com/{node-id}/{edge-name}
 ```
 
-To be able to query my friends, the url is `me/friends`. But running the command returns only 3 result. Based on the summary I should have 555 friends.
+To be able to query my friends, the url is `me/friends`. But running the command returns only 3 result. See example below. 
 
 {% highlight json %} 
 {
@@ -83,10 +83,10 @@ To be able to query my friends, the url is `me/friends`. But running the command
 }
 {% endhighlight %}
 
-Possible solution is:
+Looks like the api is limiting our data received, based on the summary I should have 555 friends. I can think of 2 possible solution to fix this:
 
-* Set result limit
-* Use cursor to go to next page
+1. Update the result limit
+2. Use cursor to traverse result
 
 Lets try to use the cursor. According to the documentation.
 
@@ -122,5 +122,9 @@ limit|This is the number of individual objects that are returned in each page. N
 next|The Graph API endpoint that will return the next page of data. If not included, this is the last page of data. Due to how pagination works with visibility and privacy, it is possible that a page may be empty but contain a 'next' paging link. Stop paging when the 'next' link no longer appears.
 previous|The Graph API endpoint that will return the previous page of data. If not included, this is the first page of data.
 
+# Dead End
+I had to stop here. Facebook updated their [graph api][graph-api-update] to only include user that allowed them to be in the result.
+
 
 [facebook-explorer]: https://developers.facebook.com/tools/explorer
+[graph-api-update]: http://stackoverflow.com/questions/23417356/facebook-graph-api-v2-0-me-friends-returns-empty-or-only-friends-who-also-u
