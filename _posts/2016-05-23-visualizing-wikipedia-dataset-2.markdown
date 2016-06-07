@@ -82,7 +82,7 @@ We need another type of visualization to see this kind of data.
 		});
 
 	// start visualization
-	var width = 960,
+	var width = 750,
 		height = 500,
 		animationStep = 1000;
 
