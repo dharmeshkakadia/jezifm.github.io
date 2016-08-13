@@ -43,3 +43,7 @@ Next option is dropbox, hosting in dropbox is very easy.
 3. Copy Link
 
 Thats it for now. I don't see any reason yet not to use dropbox.
+
+### Site Update!
+
+I discovered https://opendata.socrata.com/. It lets you upload dataset.
