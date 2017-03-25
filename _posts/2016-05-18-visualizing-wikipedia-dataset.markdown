@@ -51,7 +51,7 @@ In the next topic will choose a better visualization, called __force layout__.
 
 [data-science-wiki]: https://en.wikipedia.org/wiki/Data_science
 [crisp-image]: https://upload.wikimedia.org/wikipedia/commons/b/b9/CRISP-DM_Process_Diagram.png
-[dataset-link]: {{ page.dataset_link }}
+[dataset-link]: {{ page.dataset_link | relative_url }}
 
 {% if page.enable_viz %}
 <script> 
