@@ -17,116 +17,32 @@ data = pd.read_csv(csv_url)
 data.head()
 ```
 
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>FIPS code</th>
-      <th>Jurisdiction</th>
-      <th>Division</th>
-      <th>Precincts</th>
-      <th>Total Registration</th>
-      <th>Make</th>
-      <th>Model</th>
-      <th>Equipment Type</th>
-      <th>VVPAT</th>
-      <th>Accessible Use</th>
-      <th>Early Voting</th>
-      <th>Absentee Ballots</th>
-      <th>Polling Place</th>
-      <th>State</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>200000000</td>
-      <td>Alaska State</td>
-      <td>NaN</td>
-      <td>441</td>
-      <td>574441</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Hand Counted Paper Ballots</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>200000000</td>
-      <td>Alaska State</td>
-      <td>NaN</td>
-      <td>441</td>
-      <td>574441</td>
-      <td>Premier/Diebold (Dominion)</td>
-      <td>AccuVote TSX</td>
-      <td>DRE-Touchscreen</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>200000000</td>
-      <td>Alaska State</td>
-      <td>NaN</td>
-      <td>441</td>
-      <td>574441</td>
-      <td>Premier/Diebold (Dominion)</td>
-      <td>AccuVote OS</td>
-      <td>Optical Scan</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>100000000</td>
-      <td>Alabama State</td>
-      <td>NaN</td>
-      <td>2527</td>
-      <td>2986782</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>100100000</td>
-      <td>Autauga County</td>
-      <td>NaN</td>
-      <td>17</td>
-      <td>33806</td>
-      <td>Election Systems &amp; Software</td>
-      <td>AutoMARK</td>
-      <td>Ballot Marking Device or System</td>
-      <td>NaN</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+
+```
+FIPS      Jurisdiction Division Precincts Total        Make            Model    Equipment       VVPAT Accessible Early  Absentee Polling State 
+code                                      Registration                          Type                  Use        Voting Ballots  Place
+
+---       ---          ---      ---       ---          ---             ---      ---             ---   ---        ---    ---      ---     ---   
+
+200000000 Alaska State NaN      441       574441       NaN             NaN      Hand            NaN   No         Yes    Yes      Yes     NaN
+                                                                                Counted
+                                                                                Paper
+                                                                                Ballots
+
+200000000 Alaska State NaN      441       574441       Premier/Diebold AccuVote DRE-Touchscreen Yes   Yes        Yes    No       No      NaN
+                                                       (Dominion)      TSX
+
+200000000 Alaska State NaN      441       574441       Premier/Diebold AccuVote Optical Scan    NaN   No         Yes    Yes      Yes     NaN
+                                                       (Dominion)      OS
+
+100000000 Alabama      NaN      2527      2986782      NaN             NaN      NaN             NaN   No         No     No       No      NaN
+          State
+
+100100000 Autauga      NaN      17        33806        Election        AutoMARK Ballot Marking  NaN   Yes        No     No       No      NaN
+          County                                       Systems &                Device or
+                                                       Software                 System
+```
+
 
 
 
@@ -168,8 +84,7 @@ processed_data = (data
     .rename(columns=tidy_string)
     .reset_index()
     .assign(location=lambda x: x['jurisdiction'].str.split().str.get(0))
-    .pipe(fillna, 'state', 'location')
-)
+    .pipe(fillna, 'state', 'location'))
 ```
 
 Much cleaner, readable and maintainable.
