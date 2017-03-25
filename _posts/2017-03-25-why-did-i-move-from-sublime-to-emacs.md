@@ -26,7 +26,7 @@ In summary these are his main points:
 
 * **Lisp Dream Machine** - I did not know anything `lisp` for what I know its a dead but not dead language, the **Dream Machine** part sounds cool.
 
-* **Opening file from remote file server** - I once did setup an SFTP connection in sublime, though not the best experience I had. I still did prefer editing files in my local setup then SSH my way to the remote server to either use `git pull` or `scp` to cascade changes from my local machine
+* **Opening file from remote file server** - I once did setup an SFTP connection in sublime, though not the best experience, I still prefer editing files in my local setup then SSH my way to the remote server to either use `git pull` or `scp` to cascade changes from my local machine
 
 * **Shell Mode** - When using sublime, I always have a terminal window open beside it, to run terminal commands like `SSH`, `editing files`, `running scripts`, etc. I always wished I can use my sublime features while in the terminal, like `quick-search`, `snippets`.
 
@@ -38,4 +38,4 @@ In summary these are his main points:
 
 And many more, etc...
 
-From this point, my interest in `emacs`. I feel I'm missing something big, and it is related to this unknown text editor, it has this elite/hackerish feel. In my next post, I will tell my story on my first steps on using emacs the text editor.
+From this point, my interest in `emacs`. I feel I'm missing something big, and it is related to this unknown text editor, it has this elite/hackerish feel. For the next post, I will talk about my first steps on using emacs.
