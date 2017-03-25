@@ -3,7 +3,7 @@ layout: post
 title: 'Visualizing wikipedia links ( Part 2 )'
 date:   2016-05-23 17:00:01 +0800
 categories: wikipedia d3 data science mining scrap
-dataset_link: https://dl.dropboxusercontent.com/u/98529778/dataset/data_science_links.csv
+dataset_link: assets/data_science_links.csv
 enable_viz: true
 loading_data_gif: http://images1.desimartini.com/static1//images/loading.gif
 enable_d3: true
@@ -50,7 +50,7 @@ We need another type of visualization to see this kind of data.
 <script>
 	var DATASET_LIMIT = 20;
 	$("#chart").append("<img src='{{ page.loading_data_gif }}'></img>");
-	d3.text("{{ page.dataset_link }}", function(data) {
+	d3.text("{{ page.dataset_link | relative_url }}", function(data) {
 		$("#chart").empty();
 		// process data
 		var dataset = d3.csv.parse(data);		

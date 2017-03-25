@@ -42,8 +42,11 @@ Next option is dropbox, hosting in dropbox is very easy.
 2. Upload dataset to public folder
 3. Copy Link
 
+_Update: dropbox doesn't allow this anymore_
+
 Thats it for now. I don't see any reason yet not to use dropbox.
 
 ### Site Update!
 
-I discovered https://opendata.socrata.com/. It lets you upload dataset.
+I discovered jekyll allows you to host static files via `assets` folder, which is very nice.
+

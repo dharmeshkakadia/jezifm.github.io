@@ -3,6 +3,7 @@ layout: post
 title: 'Mining wikipedia'
 date:   2016-05-17 17:00:01 +0800
 categories: wikipedia d3 data science mining scrap
+dataset_link: assets/data_science_links.csv
 ---
 
 For this post, I would like to perform data mining on wikipedia. I would be selecting an article then create a crawler that goes through each link up to a certain degree (5 degree) and visualize it using force layout d3.
@@ -113,52 +114,15 @@ pd.DataFrame(data, columns=['from', 'to', 'degree']).sample(5)
 
 
 
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>from</th>
-      <th>to</th>
-      <th>degree</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7235</th>
-      <td>/wiki/Histogram</td>
-      <td>/wiki/Computer_programming</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4470</th>
-      <td>/wiki/Probability_models</td>
-      <td>/wiki/Main_Page</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3248</th>
-      <td>/wiki/Machine_translation</td>
-      <td>/wiki/Cartogram</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1015</th>
-      <td>/wiki/Forbes</td>
-      <td>/wiki/Harvard_Business_Review</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1370</th>
-      <td>/wiki/Prasanta_Chandra_Mahalanobis</td>
-      <td>/wiki/Boxplot</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+```
+| from                               | to                            | degree | 
+| ---                                |                               |    --- | 
+| /wiki/Histogram                    | /wiki/Computer_programming    |      1 | 
+| /wiki/Probability_models           | /wiki/Main_Page               |      1 | 
+| /wiki/Machine_translation          | /wiki/Cartogram               |      1 | 
+| /wiki/Forbes                       | /wiki/Harvard_Business_Review |      1 | 
+| /wiki/Prasanta_Chandra_Mahalanobis | /wiki/Boxplot                 |      1 | 
+```
 
 
 
@@ -172,5 +136,4 @@ df['target'] = le.transform(df['to'])
 df.to_csv('output/data_science_links.csv', index=False)
 ```
 
-
-Download output [here](https://dl.dropboxusercontent.com/u/98529778/dataset/data_science_links.csv)
+Download output [here]({{ page.dataset_link | relative_url }})

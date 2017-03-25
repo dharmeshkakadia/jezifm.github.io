@@ -3,7 +3,7 @@ layout: post
 title: 'Visualizing wikipedia links ( Part 1 )'
 date:   2016-05-17 17:00:01 +0800
 categories: wikipedia d3 data science mining scrap
-dataset_link: https://dl.dropboxusercontent.com/u/98529778/dataset/data_science_links.csv
+dataset_link: assets/data_science_links.csv
 enable_viz: true
 loading_data_gif: http://images1.desimartini.com/static1//images/loading.gif
 enable_d3: true
@@ -25,9 +25,11 @@ Image this, you now have the relationship between wiki pages. What are the quest
 
 To answer the following question, we need to see the [dataset][dataset-link]. We can view it as a table. 
 
-<div id='table'></div>
+
 
 _Note: Only the first 10 result was shown._
+
+<div id='table'></div>
 
 We can use this but this make our understanding slower. Why? because 
 
@@ -54,8 +56,8 @@ In the next topic will choose a better visualization, called __force layout__.
 {% if page.enable_viz %}
 <script> 
 	var DATASET_LIMIT = 20;
-	$("#table").append("<img src='{{ page.loading_data_gif }}'></img>");
-	d3.text("{{ page.dataset_link }}", function(data) {
+	$("#table").append("");
+	d3.text("{{ page.dataset_link | relative_url }}", function(data) {
 		$("#table").empty();
 		// Visualization - table
 		var parsedCSV = d3.csv.parseRows(data);
