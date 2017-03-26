@@ -32,13 +32,13 @@ Next is scrolling, scrolling in emacs moves the page up and down. `C-v` to scrol
 
 #### Opening a file
 
-To open a file press `C-x C-f` *(hold ctrl while pressing x then f)* this will prompt user to input the path to open. Its like pressing `C-o` or *open file* in normal editor. The only difference is in emacs we call this `visiting a file`. Visit means if the path/file doesn't exist it will create one. This combines creating and opening file which is very intuitive.
+To open a file press `C-x C-f` *(hold ctrl while pressing x then f)* this will prompt user to input the path to open. Its like pressing `C-o` or *open file* in normal editor. The only difference is in emacs we call this `visiting a file`. Visit means if the path/file doesn't exist it will create one. This combines creating and opening of a file which is very intuitive.
 
 ### Editing
 
 Now that we can move through the file, inserting text is the same with any editor, just type the characters and it will be inserted before the cursor.
 
-For deleting text we can use `delete` or `backspace` to delete a character. When we want to do a bulk delete Eg. delete a whole word we highlight the word using the **mouse (double-click)** then press `backspace`. In emacs we just press `M-d` and the word after the cursor will be deleted. This is where emacs shine, normally **mouse and keyboard** are involved in performing deletion of word, in emacs you only use your **keyboard**. Same logic applies with deleting line `C-k`.
+For deleting text we can use `delete` or `backspace` to delete a character. When we want to do a bulk delete Eg. delete a whole word we highlight the word using the **mouse (double-click)** then press `backspace`. In emacs we just press `M-d` and the word after the cursor will be deleted. This is where emacs shine, normally **mouse and keyboard** are involved in performing deletion of word, in emacs you only use your **keyboard**. Same logic applies with deleting line, `C-k`.
 
 #### Copy and Paste
 
@@ -54,7 +54,7 @@ To use the **multi-slot clipboard** of emacs we need to be familiarized with its
 |paste|yank|
 |clipboard|kill-ring|
 
-Everytime we `cut/delete` in emacs it is appended to its `clipboard`. So when we perform `paste`, the latest text in the `clipboard` will be inserted. But what if, what we want is the second to the last text in the clipboard, in that case we just perform the `paste` twice. This will replace the inserted word with the previous text in the clipboard. This is different from normal where pressing `paste` twice will result in duplicated text. You can use the same logic for accessing nth-slot of the `clipboard`.
+Everytime we `cut/delete` in emacs it is appended to its `clipboard`. So when we perform `paste`, the latest item in the `clipboard` will be inserted. But what if, what we want is the second to the last text in the clipboard, in that case we just perform the `paste` twice. This will replace the inserted word with the previous item in the clipboard. This is different from normal where pressing `paste` twice will result in duplicated text. You can use the same logic for accessing nth-slot of the `clipboard`.
 
 
 We barely scratch the surface, as you can see the basic functions in emacs are not so basic at all. But when you get to familiarized with this commands it will start to feel natural. And you'll become aware of the inefficiencies of your current workflow. Then your journey to micro-optimization begins, and emacs will be you best buddy.
