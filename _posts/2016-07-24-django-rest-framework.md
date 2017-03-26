@@ -17,7 +17,7 @@ The tutorial covers the following:
 
 ## Serialization
 
-A serializer is used to transform request parameters to model and vice versa. A typical activity would look like this
+Serializer transforms request parameter to model or vice versa. A typical flow would look like this
 
 ![serializer activity diagram](/assets/djangorest-serialization.png)
 
@@ -31,13 +31,13 @@ Serializers can do the following:
 
 ## Class based views
 
-It is used after url has been routed, you will be defining how each HTTP method will be handled. Inside the class you need to implement `get`, `post`, `put`, `patch`, `delete` methods.
+A url/resource can be assigned to a class, you will be defining how each HTTP method will be handled. Inside the class you need to implement `get`, `post`, `put`, `patch`, `delete` methods.
  
 Class based views is the building block for `ViewSets`, a higher abstraction of Django REST framework.
 
 ## Authentication
 
-Intercepts the request then pass it through all the authentication backend. If one succeed then `request.user` and `request.auth` is populated. `request.auth` is the authentication backend used, Eg. `facebook`, `google` or `Django` itself.
+Authentication in Django REST works by intercepting the request then passing it to all the authentication backend. If one succeed then `request.user` and `request.auth` is populated. `request.auth` is the authentication backend used, Eg. `facebook`, `google` or `Django` itself.
 
 ## Permissions
 
@@ -49,6 +49,6 @@ Used to improve cohesion and discoverability. Few `API` have these, if you can i
 
 ## Viewsets
 
-It implements standard way for performing `CRUD` to the model. It will generate two resource namely **List** and **Detail**. **List** resource will be responsible for `create`, `update`, `delete` of the model. While **Detail** resource for retrieve single and multiple records.
+It implements standard way for performing `CRUD` to the model. It will generate two resource namely **List** and **Detail**. **List** resource will be responsible for `create` model and `retrive list` of record. While **Detail** resource for `retrieve`, `update`, `delete` single record.
 
-[official-guide]: http://www.tomchristie.com/rest-framework-2-docs/
+[official-guide]: (http://www.tomchristie.com/rest-framework-2-docs/)
