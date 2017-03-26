@@ -24,8 +24,24 @@ description: >
 baseurl: ""
 url: "http://jezifm.github.io"
 repository: jezifm/jezifm.github.io
+author:
+  twitter: jezarciaga
+
 twitter_username: jezarciaga
+twitter:
+  username: jezarciaga
+
 github_username: jezifm
+
+social:
+  name: Jezrael Arciaga
+  links:
+    - https://twitter.com/jezarciaga
+    - https://www.linkedin.com/in/jezrael-arciaga-4785a133
+    - https://github.com/jezifm
+    - https://www.kaggle.com/jezifm
 
 # Build settings
 markdown: kramdown
+gems:
+  - jekyll-seo-tag
