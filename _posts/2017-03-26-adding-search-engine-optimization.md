@@ -4,9 +4,9 @@ title: 'Adding search engine optimization'
 date:   2017-03-26 12:29:22 +0800
 categories:
 ---
-After generating 10 posts, I wish to improve online exposure of this blog using google. This blog uses github pages with the help of Ruby's jekyll to generate static content. A quick search shows there is a SEO tag plugin for github pages, instruction [here](https://help.github.com/articles/search-engine-optimization-for-github-pages/).
+After generating few posts, It would be great if I can increase online exposure of this blog. Currently it is hosted with github pages and uses `jekyll` to generate static content.
 
-To enable SEO,
+It is easy to enable SEO, you can follow the instruction [here](https://help.github.com/articles/search-engine-optimization-for-github-pages/).
 
 - Add plugin to `_config.yml` file:
 
@@ -15,7 +15,7 @@ gems:
   - jekyll-seo-tag
 ```
 
-- Add html snippet to default page
+- Also, add html snippet to default page after the `include header.html` line.
 
 ```html
 ...
@@ -28,23 +28,37 @@ gems:
 ...
 ```
 
-After enabling SEO, I need to ensure that I'm using the plugin properly. Looking at the *usage* section from the docs, we can add SEO tags in `_config.yml`
+You need to run `gem install jekyll-seo-tag` to ensure you have the right package installed before re-buidling the site if not you may run into some issues like `unknown tag seo`.
+
+Now that we have the SEO enabled, we need to ensure that we are using it propertly. At the *usage* section of its docs, the following `tags` from `_config.yml` are used.
 
 ```yaml
-title: My Awesome Blog
-email: this-is-awesome@gmail.com
-description: This is awesome
+title: Mauris ac felis vel velit tristique imperdiet.
+email: mauris-felis@gmail.com
+description: >
+	Pellentesque dapibus suscipit ligula.  Donec posuere augue in
+    quam.  Etiam vel tortor sodales tellus ultricies commodo.
+    Suspendisse potenti.  Aenean in sem ac leo mollis blandit.  Donec
+    neque quam, dignissim in, mollis nec, sagittis eu, wisi.
+    Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at dui
+    in ligula mollis ultricies.  Integer placerat tristique nisl.
+    Praesent augue.  Fusce commodo.  Vestibulum convallis, lorem a
+    tempus semper, dui dui euismod elit, vitae placerat urna tortor
+    vitae lacus.  Nullam libero mauris, consequat quis, varius et,
+    dictum id, arcu.  Mauris mollis tincidunt felis.  Aliquam feugiat
+    tellus ut neque.  Nulla facilisis, risus a rhoncus fermentum,
+    tellus tellus lacinia purus, et dictum nunc justo sit amet elit.
 author:
-  twitter: awesomeblog
+  twitter: mauris-felis
 social:
-  name: Awesome Blog
+  name: Mauris Blog
   links:
-    - https://twitter.com/awesomeblog
-    - https://www.linkedin.com/in/awesome-blog
-    - https://github.com/awesome-blog
-    - https://www.kaggle.com/awesome-blog
+    - https://twitter.com/mauris-felis-ac
+    - https://www.linkedin.com/in/mauris-felis-ac
+    - https://github.com/mauris-felis-ac
+    - https://www.kaggle.com/mauris-felis-ac
 ```
 
-But before I enable SEO I need to have a way to check if it really does work. Simplest I can think of would be using online SEO ranking too like [seositecheckup.com](https://seositecheckup.com). The site got score of 78 out of 100. Now lets see what's going to happen after adding SEO.
+To make sure the SEO plugin is working I have to check my current seo score [seositecheckup.com](https://seositecheckup.com). Currently the blog scores **78 out of 100**, hopefully this will increase afterwards.
 
-#### TODO re-evaluate SEO metric
+_Update!!_ For some reason the score went down to **74**. I think this has something to do with `jekyll` using `h2` tag for each post. But before jumping into conclusion I need to find out how really SEO works.
