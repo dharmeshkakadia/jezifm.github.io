@@ -10,7 +10,6 @@ Article aims to support the [official guide](official-guide), by providing clear
 The tutorial covers the following:
 
 * Serialization
-* Requests & Responses
 * Class based views
 * Authentication & Permissions
 * Relationships & hyperlinked APIs
@@ -18,55 +17,38 @@ The tutorial covers the following:
 
 ## Serialization
 
-Being new to the framework, serialization seems to have no place in a RESTful framework. 
+A serializer is used to transform request parameters to model and vice versa. A typical activity would look like this
 
-> What is the function of a serializer?
+![serializer activity diagram](/assets/djangorest-serialization.png)
 
 Serializers can do the following:
 
-1. Converts model to dictionary and vice versa.
-2. Validates a dictionary.
-3. Create a model from a dictionary.
-
-Basically it **maps** model fields to dictionary attributes, and provides validation on the process. One can skip the serialization and do the mapping in the view. But the problem with that is, similar views will have similar code and will violate the **DRY** principle.
+1. Transform model to form
+2. Validate form
+3. Save form to database creating a model in the process
 
 **Serialization** has the most documentation in the **Django REST Framework**. It's important to be familiarize with the technique.
 
-### Serializers
-
-
-### Fields
-
-### Relations
-
-## Requests
-
-> What is a request object, is it different from core Django's HTTPRequest object?
-
-Django REST's `Request` is different from Django's `HTTPRequest`. REST developer's added a new attribute `DATA`  (not sure why is it in all caps) that can handle not just **POST** form data but also data coming from **PUT** and **PATCH** methods.
-
 ## Class based views
 
-No reason to prefer this view. Class based views is the building block for `ViewSets`.
+It is used after url has been routed, you will be defining how each HTTP method will be handled. Inside the class you need to implement `get`, `post`, `put`, `patch`, `delete` methods.
+ 
+Class based views is the building block for `ViewSets`, a higher abstraction of Django REST framework.
 
 ## Authentication
 
-Basically it is responsible for populating the `request.user` and `request.auth` fields.
+Intercepts the request then pass it through all the authentication backend. If one succeed then `request.user` and `request.auth` is populated. `request.auth` is the authentication backend used, Eg. `facebook`, `google` or `Django` itself.
 
 ## Permissions
 
-> Why is this in the views? why not put it in the serializer since validation is in there?
-
-It uses the `request.user` and `request.auth` to determine if the request if permitted. 
+After authenticating the user, this check if `request.user` has the rights to access the `resource` being requested.
 
 ## Relationships & hyperlinked APIs
 
-Used to improve cohesion and discoverability. Not needed, optional.
+Used to improve cohesion and discoverability. Few `API` have these, if you can implement this then you have a good RESTful interface.
 
 ## Viewsets
 
-It implements standard way for retrieving a list of model. CRUD access of the models. As seen above, right now there is no reason to prefer class based view over viewsets.
-
-
+It implements standard way for performing `CRUD` to the model. It will generate two resource namely **List** and **Detail**. **List** resource will be responsible for `create`, `update`, `delete` of the model. While **Detail** resource for retrieve single and multiple records.
 
 [official-guide]: http://www.tomchristie.com/rest-framework-2-docs/
