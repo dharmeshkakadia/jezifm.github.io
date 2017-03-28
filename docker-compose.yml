@@ -1,0 +1,9 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - ".:/code"
+    command: jekyll serve --source=/code --host=0.0.0.0
