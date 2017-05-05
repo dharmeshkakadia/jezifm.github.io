@@ -2,6 +2,7 @@
 layout: post
 title: 'Adding search engine optimization'
 date:   2017-03-26 12:29:22 +0800
+published: false
 categories:
 ---
 After generating few posts, It would be great if I can increase online exposure of this blog. One solution I can think of is by having this blog to be shown in google search results. A popular term comes to mind and it is SEO. So what exactly is SEO? Lets see what [wikipedia](https://en.wikipedia.org/wiki/Search_engine_optimization) has to say...
