@@ -50,10 +50,10 @@ doesn't require you using the mouse only your keyboard. And there are
 advantage to it.
 
 - Keyboard allows you to use all your 10 fingers
-- No input switching between mouse and keyboard (it slows you down
+- No input switching between mouse and keyboard (it slows you down,
   believe me)
-
-I am a photographer, I for know that auto-mode is almost only used on
+  
+I am a photographer, I know that auto-mode is almost only used on
 entry level cameras. This is the equivalent of mouse to
 computers. Mouse are created to lower the barrier on using
 computers. But as your proficiency increases you will want more than
