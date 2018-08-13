@@ -165,10 +165,10 @@ computers. When ordinary people has access to computer they chose
 the path with lower learning curve GUI despite the productivity when
 using text-based programs.
 
-I am not saying that efficiency trumps convenience. They are different
+I am not saying that efficiency trumps convinience. They are different
 criteria and not correlated.
 
-Some people would like efficiency over convenience like me. Others would choose convinience.
+Some people would like efficiency over convinience like me. Others would choose convinience.
 
 It is like normal person would choose cars that uses automatic
 transmission, a racer would likely to use a manual type. Are you a
