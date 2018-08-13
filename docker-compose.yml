@@ -6,4 +6,4 @@ services:
       - "4000:4000"
     volumes:
       - ".:/code"
-    command: jekyll serve --source=/code --host=0.0.0.0
+    command: jekyll serve --source /code --host 0.0.0.0
