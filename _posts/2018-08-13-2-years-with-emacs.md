@@ -34,8 +34,8 @@ the main cause of division between Emacs and Non-Emacs users.
 ## Experience
 
 As I use Emacs as my editor, I started to see things
-differently. There was a frustration at first mainly because
-mainstream application/editor I was used to doesn't behave like
+differently. There was a frustration at first, mainly because
+mainstream application/editor I was used to, doesn't behave like
 emacs. But as I started to do things in emacs way. I slowly started to
 realize things. It has this liberating feeling.
 
@@ -57,26 +57,27 @@ I am a photographer, I know that auto-mode is almost only used on
 entry level cameras. This is the equivalent of mouse to
 computers. Mouse are created to lower the barrier on using
 computers. But as your proficiency increases you will want more than
-the mouse has to offer.
+what the mouse can offer.
 
 # Text vs GUI
 
 After learning how to use the keyboard alone, I now realize that I am
-not dependent to GUI anymore. I now see how simple things are. And
+not dependent on GUI anymore. I see how simple things are and that
 almost everything can be done using text only.
 
-And because I am now getting used to text-only I notice there is a
-consistency in the way I navigate, edit or use programs. Which I
+Also because I am getting used to text-only I started notice the
+consistency in the way I navigate, edit or use programs. Something I
 never achieve when I am using GUI applications.
 
 # Customization (Open Source)
 
-As I'm getting used to emacs way of doing things, I started to think of
-a better way of doing things. Example is I would like that whenever I
+Now I'm familiar to emacs way of doing things, I started to think of a
+better way of doing things. Example is I would like that whenever I
 save I also want to run `make test` on the other window. So I can see
 If I am breaking my code. I just write a code to do just that and bind
-it to a key like `Ctrl + r`. Another one, when I press `Alt + .` i want to go to
-the definition of the function I'm editing then `Alt + ,` to go back.
+it to a key like `Ctrl + r`. Another one, when I press `Alt + .` i
+want to go to the definition of the function I'm editing then `Alt + ,` 
+to go back.
 
 ```elisp
 (progn
@@ -91,18 +92,19 @@ the definition of the function I'm editing then `Alt + ,` to go back.
   (global-set-key (kbd "C-r") 'save-test))
 ```
 
-It is very easy to customize things. And everything is available and
-properly documented. I can see how opening a file is implemented and
-work from there. I did create plug-ins in sublime before using python
-plug-ins to help me on frequent tasks I am doing. Sublime exposes
-limited set of API that I can use but it is nowhere what Emacs offer.
+It is straightforward on how to customize things. Everything is
+available and properly documented. I can see how opening a file is
+implemented and work from there. I did create plug-ins in sublime
+before using python plug-ins to help me on frequent tasks I am
+doing. Sublime exposes limited set of API that I can use but it is
+nowhere what Emacs offer.
 
-In emacs almost everything is exposed not just a set. Everything is a
-function. Even when I'm just inserting a character `'c'` it is calling
-the function `insert-command`, this allows me to redefine almost
-anything.
+In emacs almost everything is exposed or available to the
+user. Everything is a function. When I'm just inserting a character
+`'c'` it is calling the function `insert-command`, this allows me to
+redefine almost anything.
 
-Because everything is open and customizable, this awaken the
+Because everything is accessible and editable, this awakens the
 developer spirit in me. As a developer we develop software that helps
 the user. In this case I am the user and I want to develop things that
 will help me. Just like a chef cooking for himself.
