@@ -188,7 +188,7 @@ Then **YES** emacs is for you.
 Are you contented on what current software has to offer? And currently
 happy with your workflow?
 
-Then **NO** emacs is not for you. You are better of using Vim, Sublime or
+Then **NO** emacs is not for you. You are better off using Vim, Sublime or
 any IDE.
 
 Its like the red pill or blue pill in the matrix. 
