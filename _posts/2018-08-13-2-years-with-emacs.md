@@ -9,7 +9,7 @@ categories:
 
 I've been busy recently and forgot about this blog but since I've left
 my previous job I have all this free time to revisit things. 2 years
-has passed since I switch from sublime to emacs. I must say i've grown
+has passed since I switch from sublime to emacs. I must say I've grown
 to like it more than ever.
 
 This is about what I've experienced over the time I used emacs.
@@ -65,18 +65,18 @@ After learning how to use the keyboard alone, I now realize that I am
 not dependent to GUI anymore. I now see how simple things are. And
 almost everything can be done using text only.
 
-And because I am now gettings used to text-only I notice there is a
+And because I am now getting used to text-only I notice there is a
 consistency in the way I navigate, edit or use programs. Which I
 never achieve when I am using GUI applications.
 
-# Customizability (Open Souce)
+# Customization (Open Source)
 
-As Im getting used to emacs way of doing things, I started to think of
+As I'm getting used to emacs way of doing things, I started to think of
 a better way of doing things. Example is I would like that whenever I
 save I also want to run `make test` on the other window. So I can see
 If I am breaking my code. I just write a code to do just that and bind
 it to a key like `Ctrl + r`. Another one, when I press `Alt + .` i want to go to
-the definition of the function i'm editing then `Alt + ,` to go back.
+the definition of the function I'm editing then `Alt + ,` to go back.
 
 ```elisp
 (progn
@@ -93,8 +93,8 @@ the definition of the function i'm editing then `Alt + ,` to go back.
 
 It is very easy to customize things. And everything is available and
 properly documented. I can see how opening a file is implemented and
-work from there. I did create plugins in sublime before using python
-plugins to help me on frequent tasks I am doing. Sublime exposes
+work from there. I did create plug-ins in sublime before using python
+plug-ins to help me on frequent tasks I am doing. Sublime exposes
 limited set of API that I can use but it is nowhere what Emacs offer.
 
 In emacs almost everything is exposed not just a set. Everything is a
@@ -111,7 +111,7 @@ will help me. Just like a chef cooking for himself.
 
 Most editor now can be extended using Python (Sublime) or Javascript
 (Atom). Emacs can be extended using Lisp. Lisp has the simplest syntax
-of the three and is the most flexible. It is homogenous, there is almost
+of the three and is the most flexible. It is homogeneous, there is almost
 no difference between code and data. Everything can be
 manipulated. You want your own `if-else` clause or even your own
 `do-while` flow you can define it yourself.
@@ -165,10 +165,10 @@ computers. When ordinary people has access to computer they chose
 the path with lower learning curve GUI despite the productivity when
 using text-based programs.
 
-I am not saying that efficiency trumps convinience. They are different
+I am not saying that efficiency trumps convenience. They are different
 criteria and not correlated.
 
-Some people would like efficiency over convinience like me. Others would choose convinience.
+Some people would like efficiency over convenience like me. Others would choose convenience.
 
 It is like normal person would choose cars that uses automatic
 transmission, a racer would likely to use a manual type. Are you a
