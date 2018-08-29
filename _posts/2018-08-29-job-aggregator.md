@@ -65,15 +65,11 @@ granularity makes it much easier to transform data.
 
 Here I have to make a decision,
 
->How do I trigger the transformation?
+> How do I trigger the transformation? event-based? schedule-based?
 
-> Everytime a new record is created?
-
-> Periodic monitoring of the list and run when needed transformation?
-
-I decided to go with the latter reason being is having
-the trigger outside of the collection phase make the system loosely
-coupled.
+I decided to go with schedule-based reason being is having the trigger
+independent of the extraction frequency lessen coupling between
+collection and transformation stages.
 
 # Relational Database
 
@@ -101,7 +97,7 @@ spiking to 40%** when there are a lot of new job posting ingested by
 the system. **Memory Usage** is at **800+mb**
 
 The system can scale horizontally, as the job sources increases we can
-load balance it across different scraper. 
+load balance it across different scraper.
 
 If we want to increate request per second eg too many user is viewing
 the system we can create a `master-slave` setup, and then load balance
