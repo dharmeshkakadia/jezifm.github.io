@@ -43,8 +43,6 @@ location.
 
 # Core Components
 
-![core_components](/assets/job-aggregator-core-components.png)
-
 ## Scraper
 
 There are only a few scraping libraries you can use in python. In top
@@ -103,7 +101,7 @@ spiders/scrapers.
 Data being collected by scraper are unstructured and needs to be
 transformed to uniform format if to display data to user.
 
-Source data would be a NoSQL (Mongo DB) and the target is RDMS. 
+Source data would be a NoSQL (Mongo DB) and the target is RDMS.
 
 There are the options I think that can be done:
 - Shell scripting
@@ -117,51 +115,69 @@ affected and will be difficult to work with.
 The only choice left is python, it is good since it can be integrated
 with mongo db and almost any RDBMS technology available.
 
----
-# TODO
+Python has library called `pymongo` used to connect to **Mongo
+DB**. It has complete documentation and will be easy to use.
 
-Each of the sources have different structure, I needed it to be
-transformed into a more use-able format, since they will be
-consolidated into one long list. The ratio is 1 source 1
-transformer and 1 item corresponds to 1 posting. Having consistent
-granularity makes it much easier to transform data.
+There is no need to change granularity of the data, each of the job
+posting has no needs to be aggregated transformation will be done in
+1:1 ratio.
 
-Here I have to make a decision,
+Since we wan't out site to be near realtime I choose to run this
+script every 90 seconds. If done right most of the time will do
+nothing or at least load only a few jobs at a time.
 
-> How do I trigger the transformation? event-based? schedule-based?
+We can do it buy triggering the ETL everytime there is a new data but
+that is expensive there is not really a huge gain of having the given
+to you 80 seconds earlier. Running the script periodically makes it
+efficient and has less CPU footprint.
 
-I decided to go with schedule-based reason being is having the trigger
-independent of the extraction frequency lessen coupling between
-collection and transformation stages.
 
-## TODO Relational Database
+All the job posting we captured need to be put in a uniform format,
+all the fields common to each other should be factored out. Also some
+fields that are missing needs to be filled in. In this case if there
+is a missing data we can just specify **Unknown**. This is to ensure
+that all fields has value and making it easier to deal with things
+later.
 
-Having transformed each item to a uniform structure it is proper to
-use a relational database. In this case I use **Postgres**
+We haven't chosen a loader of the library we are going to use to load
+the data it is because we haven't decided yet what web server to use
+or what specific of RDMS is the target load. Later will choose one,
+but this time we skip it.
 
-## TODO Web Application
+## Web Server
 
-To view the data to the user we need to have a web application that
-can query the job listing and present it to the user, I decided to use
-**Django** in this case since I am familiar with it.
+Since python is the main langauge being used there not much of choice
+here. Most popular framework are
 
-## TODO Static Files
+- Django
+- Flask
 
-## TODO Web Server
+This case I will use `Django` mainly because it enables rapid
+development and has clean design. It has rich toolkit to use. And
+works well with deployment. Its preferred database is
+`postgresql`.
 
-For the server, I want it to be secured using *https* therefore I
-decided to use **Caddy**.
+Going back to the ETL part I am going to use `django's ORM` to
+transformed job updates to database. To use it, we need to work well
+withing django application.
 
-# TODO Deployment and Scaling
+For periodic or scheduling use case `celery` is the gold standard for
+doing this. `celery` will be calling the ETL scripts and running it
+every 90 seconds.
+
+# Deployment and Scaling
+
+All of this will be dockerized, therefore deployment is not a
+problem. As a matter of fact.
 
 All of the services are very light and can be deployed in a single ec2
 `t2.micro instance`. It is running with **CPU utilization of 1-3% and
 spiking to 40%** when there are a lot of new job posting ingested by
 the system. **Memory Usage** is at **800+mb**
 
-The system can scale horizontally, as the job sources increases we can
-load balance it across different scraper.
+# Conclusion
 
-If we want to increate request per second eg too many user is viewing
-the system we can create a `master-slave` setup, and then load balance
-it across multiple slave read only database.
+At first I thought job aggregator service will require higher capacity
+servers. But when done well it can be done a small instance in this
+case. You can visit actual working prototype
+[here](https://jobs.jezarciaga.com) 
